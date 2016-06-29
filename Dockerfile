@@ -1,4 +1,4 @@
-FROM sparklyballs/base-vanilla-armhf
+FROM lsioarmhf/base.alpine
 MAINTAINER sparklyballs
 
 # install build dependencies
