@@ -52,7 +52,6 @@ RUN \
  LIBRARY_PATH=/lib:/usr/lib \
  pip install --no-cache-dir -U \
 	cheetah \
-	cherrypy \
 	configparser \
 	ndg-httpsclient \
 	notify \
