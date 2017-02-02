@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.armhf
+FROM lsiobase/alpine.armhf:3.5
 MAINTAINER sparklyballs
 
 # install runtime packages
@@ -12,9 +12,9 @@ RUN \
 	libwebp \
 	openjpeg \
 	p7zip \
-	py-lxml \
-	py-pip \
-	python \
+	py2-lxml \
+	py2-pip \
+	python2 \
 	tar \
 	tiff \
 	unrar \
@@ -37,12 +37,12 @@ RUN \
 	lcms2-dev \
 	libffi-dev \
 	libpng-dev \
+	libressl-dev \
 	libwebp-dev \
 	linux-headers \
 	make \
 	openjpeg-dev \
-	openssl-dev \
-	python-dev \
+	python2-dev \
 	tiff-dev \
 	zlib-dev && \
 
