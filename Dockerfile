@@ -1,8 +1,10 @@
-FROM lsiobase/alpine.armhf:3.6
-MAINTAINER sparklyballs
+FROM lsiobase/alpine.armhf:3.7
 
-# install build packages
+# work around for hanging configure
+ARG CONFIG_SHELL=/bin/sh
+
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	autoconf \
 	automake \
@@ -21,8 +23,7 @@ RUN \
 	python2-dev \
 	tiff-dev \
 	zlib-dev && \
-
-# install runtime packages
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	curl \
 	freetype \
@@ -44,8 +45,7 @@ RUN \
 	wget \
 	xz \
 	zlib && \
-
-# add pip packages
+ echo "**** install pip packages ****" && \
  pip install --no-cache-dir -U \
 	pip && \
  pip install --no-cache-dir -U \
@@ -61,8 +61,7 @@ RUN \
 	setuptools \
 	urllib3 \
 	virtualenv && \
-
-# clean up
+ echo "**** clean up ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
