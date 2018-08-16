@@ -1,7 +1,4 @@
-FROM lsiobase/alpine.armhf:3.7
-
-# work around for hanging configure
-ARG CONFIG_SHELL=/bin/sh
+FROM lsiobase/alpine.armhf:3.8
 
 RUN \
  echo "**** install build packages ****" && \
